@@ -71,4 +71,5 @@ Describa lo positivo a rescatar y, si fuese posible, lo negativo a evitar.
 #### Moodboard de Referentes
 
 En proceso
+
 ![Meme](https://cdn.memegenerator.es/imagenes/memes/full/3/36/3367862.jpg)
