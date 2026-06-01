@@ -7,7 +7,7 @@
 | Preguntas | Respuestas |
 |:----------|:-----------|
 | Nombre y Rol | Sofía, estudiante universitaria de comunicaciones |
-| Demográficos | 22 años, Santiago de Chile. Estudiante con ingresos bajos, vive con sus padres. Consume series animadas en plataformas de streaming en su tiempo libre.| 
+| Demográficos | 22 años, Santiago. Estudiante con ingresos bajos, vive con sus padres. Consume series animadas en plataformas de streaming en su tiempo libre.| 
 | Objetivos y Motivaciones | Quiere descubrir qué series animadas son las mejor evaluadas y más populares para decidir qué ver a continuación. Busca una vista rápida y visual que le ayude a comparar series sin tener que leer artículos largos. | 
 | Puntos de dolor (Pain points) | Le cuesta encontrar información centralizada sobre series animadas que no sea solo de anime o solo de caricaturas occidentales. Los sitios de recomendación son lentos y están llenos de publicidad. No tiene tiempo para investigar mucho. |
 
@@ -17,7 +17,7 @@
 | Preguntas | Respuestas |
 |:----------|:-----------|
 | Nombre y Rol | Eduardo, productor de contenido audiovisual freelance |
-| Demográficos | 31 años, Japón. Ingresos medios-altos. Trabaja de forma independiente creando videos de análisis sobre la industria de la animación para YouTube. | 
+| Demográficos | 31 años, Santiago. Ingresos medios-altos. Trabaja de forma independiente creando videos de análisis sobre la industria de la animación para YouTube. | 
 | Objetivos y Motivaciones | Necesita datos concretos y comparables sobre tendencias en la industria animada: qué países producen más, qué géneros dominan, cómo evolucionó la popularidad en el tiempo. Busca insights que pueda citar en sus videos. | 
 | Puntos de dolor (Pain points) | Los datos de animación están dispersos en múltiples fuentes (IMDb, MyAnimeList, TMDB) y no hay un lugar que los unifique visualmente. Le frustra tener que hacer scraping o cruzar tablas manualmente para obtener estadísticas comparativas. |
 
