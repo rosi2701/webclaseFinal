@@ -26,7 +26,7 @@
 | Preguntas | Respuestas |
 |:----------|:-----------|
 | Nombre y Rol | Marta, profesora de educación básica |
-| Demográficos | 48 años, Concepción, Chile. Ingresos medios. Usa series animadas como recurso pedagógico en clases. Tiene conocimientos tecnológicos básicos. | 
+| Demográficos | 48 años, Concepción. Ingresos medios. Usa series animadas como recurso pedagógico en clases. Tiene conocimientos tecnológicos básicos. | 
 | Objetivos y Motivaciones | Quiere encontrar series animadas bien evaluadas y apropiadas para diferentes edades, con información clara sobre popularidad y origen. No busca análisis profundos, sino una guía simple y visual. | 
 | Puntos de dolor (Pain points) | La mayoría de dashboards de datos son demasiado técnicos o están en inglés. Le cuesta interpretar gráficos complejos. Necesita algo intuitivo que pueda usar en pocos minutos sin formación técnica. |
 
