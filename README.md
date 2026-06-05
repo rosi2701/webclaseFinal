@@ -49,24 +49,32 @@ AnimaStats es un dashboard interactivo que permite explorar y comparar las serie
 - Filtro interactivo por rating mínimo y país
 - Tarjetas de series con póster, nombre y datos clave
 
-#### Antecedente 1: Nombre con link
+#### Antecedente 1: Base de datos de cartas de JCC 
 
-Pantallazo.
+https://www.pokemon.com/el/jcc-pokemon/cartas-pokemon
 
-Describa lo positivo a rescatar y, si fuese posible, lo negativo a evitar.
+<img width="1919" height="970" alt="Captura de pantalla 2026-06-05 003242" src="https://github.com/user-attachments/assets/cf8570de-fb50-4be6-a16d-54ce970dfd95" />
 
-#### Antecedente 2: Nombre con link
+Positivo: Sistema de filtros lateral que actualiza los resultados en tiempo real sin recargar la página. La paleta colorida y lúdica refleja una identidad de marca fuerte, muy alineada con el estilo visual que busca el proyecto.
+Negativo: No incluye visualizaciones de datos ni gráficos comparativos, todos los elementos tienen el mismo peso visual.
 
-Pantallazo. 
+#### Antecedente 2: Netflix Universe Explorer 
 
-Describa lo positivo a rescatar y, si fuese posible, lo negativo a evitar.
+https://dhirengshetty14.github.io/Netflix-Visual-Analytics/
 
-#### Antecedente 3: Nombre con link
+<img width="1919" height="970" alt="Captura de pantalla 2026-06-05 001454" src="https://github.com/user-attachments/assets/577de338-44bb-4b7c-81f9-562e9dfc6c58" />
 
-Pantallazo. 
+Positivo: Un aspecto muy positivo de este panel es la excelente variedad de gráficos utilizados, como el *streamgraph*, el mapa de calor y los diagramas de caja, los cuales, al combinarse con un panel de filtros detallado, permiten explorar los datos desde múltiples dimensiones de forma completa.
+Negativo: La densidad de información es abrumadora para un usuario casual. Algunos gráficos como el de box plots o el grafo de nodos requieren conocimientos estadísticos para interpretarse correctamente.
 
-Describa lo positivo a rescatar y, si fuese posible, lo negativo a evitar.
+#### Antecedente 3: My Anime List
 
+https://myanimelist.net/topanime.php
+
+<img width="1919" height="970" alt="Captura de pantalla 2026-06-04 222352" src="https://github.com/user-attachments/assets/1255cbdc-26d3-4f5e-9a38-111a902c3e2d" />
+
+Positivo: Las pestañas de filtro en la parte superior (All Anime, Top Airing, Top Upcoming, etc) son una solución elegante para cambiar el contexto del ranking sin recargar la página.
+Negativo: El diseño es plano y aburrido. No hay visualización de datos, gráficos ni elementos interactivos. Para alguien que llega sin saber qué buscar, no hay nada que lo invite a explorar más allá de hacer scroll.
 
 #### Moodboard de Referentes
 
