@@ -78,6 +78,5 @@ Negativo: El diseño es plano y aburrido. No hay visualización de datos, gráfi
 
 #### Moodboard de Referentes
 
-En proceso
+<img width="1919" height="970" alt="moodboard_dou" src="https://github.com/user-attachments/assets/feb5fd58-189c-4b9c-837f-281eaf62947a" />
 
-![Meme](https://cdn.memegenerator.es/imagenes/memes/full/3/36/3367862.jpg)
