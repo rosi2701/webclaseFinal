@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard de series animadas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="page">
+                                         
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-text">
+        <h1 class="display">AniToons!</h1>
+        <p>Las series animadas mejor calificadas</p>
+      </div>
+    </div>
+      <div class="topbar-actions" style="display: none;"> <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Buscar serie...">
+      </div>
+      <div class="icon-btn" title="Acerca de ToonRank" id="infoBtn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-poster" id="heroPoster" src="" alt="">
+      <div class="hero-main">
+        <div class="hero-info">
+          <p class="hero-eyebrow">Al aire ahora · #<span id="heroRank">1</span> en el ranking</p>
+          <h2 id="heroTitle">—</h2>
+          <div class="hero-meta" id="heroMeta"></div>
+        </div>
+        <div class="hero-rating">
+          <span class="num" id="heroRating">–</span>
+          <span class="lbl">PUNTUACIÓN</span>
+        </div>
+      </div>
+      <div class="hero-nav">
+        <button id="heroPrev" title="Anterior">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button id="heroNext" title="Siguiente">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="charts">
+    <div class="chart-card">
+      <h3>Distribución por calificación</h3>
+      <p class="chart-caption">Series agrupadas por nivel de puntuación</p>
+      <div class="donut-wrap">
+        <canvas id="donutChart"></canvas>
+        <div class="donut-center">
+          <div class="big" id="donutTotal">0</div>
+          <div class="small">SERIES</div>
+        </div>
+      </div>
+      <div class="legend-row" id="donutLegend"></div>
+    </div>
+    <div class="chart-card">
+      <h3>Calificación vs. popularidad</h3>
+      <p class="chart-caption">Top 20 series</p>
+      <div class="area-wrap">
+        <canvas id="areaChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <div>
+      <h3>Catálogo de series</h3>
+      <p class="toolbar-sub"><span id="resultCount">0</span> series animadas con al menos 500 votos</p>
+    </div>
+    <div class="sort-chips" id="sortChips">
+      <div class="chip active" data-sort="rating">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Mejor calificación
+      </div>
+      <div class="chip" data-sort="popularity">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Más popular
+      </div>
+      <div class="chip" data-sort="recent">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Más reciente
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="grid"></section>
+
+  <footer class="footer">
+    Datos obtenidos vía <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a> · Este producto usa la API de TMDB sin fines de lucro.
+  </footer>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
