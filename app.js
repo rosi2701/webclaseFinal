@@ -80,7 +80,6 @@ function renderDonut(){
   `).join('');
 }
 
-
 function renderArea(){
   const sorted = [...DATA].sort((a,b)=>b.rating-a.rating);
   const ratingMin = Math.min(...sorted.map(d=>d.rating));
@@ -136,16 +135,10 @@ let heroIndex = 0;
 const heroPool = [...DATA].sort((a,b)=>b.rating-a.rating).slice(0,5);
 function renderHero(){
   const d = heroPool[heroIndex];
-  document.getElementById('heroPoster').src = IMG_BASE + d.poster;
-  document.getElementById('heroPoster').alt = d.title;
+  const bgUrl = d.backdrop ? (BACKDROP_BASE + d.backdrop) : (IMG_BASE + d.poster);
+  document.getElementById('heroBg').style.backgroundImage = `url('${bgUrl}')`;
   document.getElementById('heroTitle').textContent = d.title;
   document.getElementById('heroRating').textContent = d.rating.toFixed(1);
-  document.getElementById('heroRank').textContent = heroIndex+1;
-  document.getElementById('heroMeta').innerHTML = `
-    <span class="tag">${COUNTRY_NAMES[d.country]}</span>
-    <span class="tag">${d.lang}</span>
-    <span class="tag">${d.year}</span>
-  `;
 }
 document.getElementById('heroPrev').addEventListener('click', ()=>{
   heroIndex = (heroIndex - 1 + heroPool.length) % heroPool.length;
@@ -155,8 +148,8 @@ document.getElementById('heroNext').addEventListener('click', ()=>{
   heroIndex = (heroIndex + 1) % heroPool.length;
   renderHero();
 });
-document.getElementById('infoBtn').addEventListener('click', ()=>{
-  alert('ToonRank reúne datos de TMDB sobre las series animadas mejor valoradas, con al menos 500 votos.');
+document.getElementById('heroCta').addEventListener('click', ()=>{
+  document.getElementById('grid').scrollIntoView({ behavior:'smooth', block:'start' });
 });
 
 function cardTemplate(d, idx){
@@ -185,8 +178,7 @@ function cardTemplate(d, idx){
 }
 
 function renderGrid(){
-  const term = document.getElementById('searchInput').value.trim().toLowerCase();
-  const visible = currentData.filter(d => !hidden.has(d.id) && d.title.toLowerCase().includes(term));
+  const visible = currentData.filter(d => !hidden.has(d.id));
   document.getElementById('resultCount').textContent = visible.length;
 
   const gridEl = document.getElementById('grid');
@@ -223,8 +215,6 @@ document.getElementById('grid').addEventListener('click', (e)=>{
   }
 });
 
-document.getElementById('searchInput').addEventListener('input', renderGrid);
-
 document.getElementById('sortChips').addEventListener('click', (e)=>{
   const chip = e.target.closest('.chip');
   if(!chip) return;
@@ -239,8 +229,6 @@ document.getElementById('sortChips').addEventListener('click', (e)=>{
   });
   renderGrid();
 });
-
-
 
 renderKPIs();
 renderDonut();
