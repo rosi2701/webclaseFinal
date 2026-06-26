@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard de series animadas</title>
+<title>AniToons! — Dashboard de series animadas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,8 @@
 <div class="page">
 
   <header class="topbar">
-    <div class="brand">             
+    <div class="brand">
+      <div class="brand-mark"></div>
       <div class="brand-text">
         <h1 class="display">AniToons!</h1>
         <p>Análisis de las series animadas mejor calificadas</p>
@@ -36,9 +37,9 @@
     </div>
     <div class="hero-now-card">
       <p class="hero-now-label">Mejor calificada ahora</p>
-      <p class="hero-now-title" id="heroTitle">—</p>
+      <p class="hero-now-title" id="heroTitle">-</p>
       <div class="hero-now-row">
-        <span class="hero-now-rating" id="heroRating">–</span>
+        <span class="hero-now-rating" id="heroRating">-</span>
         <div class="hero-now-nav">
           <button id="heroPrev" title="Anterior">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -68,38 +69,59 @@
     </div>
     <div class="chart-card">
       <h3>Calificación vs. popularidad</h3>
-      <p class="chart-caption">Top 20 series — la popularidad no siempre acompaña a la calificación</p>
+      <p class="chart-caption">Top series - la popularidad no siempre acompaña a la calificación</p>
       <div class="area-wrap">
         <canvas id="areaChart"></canvas>
       </div>
     </div>
   </section>
-
   <section class="toolbar">
-    <div>
+    <div class="toolbar-left">
       <h3>Catálogo de series</h3>
-      <p class="toolbar-sub"><span id="resultCount">0</span> series animadas con al menos 500 votos</p>
+      <p class="toolbar-sub" id="resultCount">Cargando series...</p>
     </div>
-    <div class="sort-chips" id="sortChips">
-      <div class="chip active" data-sort="rating">
+    <div class="toolbar-right">
+      <div class="search-box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" placeholder="Buscar serie...">
+      </div>
+      <div class="filter-chips" id="countryChips">
+        <div class="chip active" data-country="all">Todos</div>
+        <div class="chip" data-country="JP">JP Japón</div>
+        <div class="chip" data-country="US">US EE.UU.</div>
+      </div>
+      <div class="chip fav-chip" id="favFilterBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        Mejor calificación
+        Mis favoritos
       </div>
-      <div class="chip" data-sort="popularity">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        Más popular
-      </div>
-      <div class="chip" data-sort="recent">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Más reciente
+      <div class="sort-chips" id="sortChips">
+        <div class="chip active" data-sort="rating">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Mejor calificación
+        </div>
+        <div class="chip" data-sort="popularity">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          Más popular
+        </div>
+        <div class="chip" data-sort="recent">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Más reciente
+        </div>
       </div>
     </div>
   </section>
-
+  
+  <div class="loading-state" id="loadingState">
+    <div class="loading-spinner"></div>
+    <p>Cargando series...</p>
+  </div>
+  
   <section class="grid" id="grid"></section>
+  
+  <nav class="pagination" id="pagination"></nav>
 
   <footer class="footer">
-    Datos obtenidos vía <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a> · Este producto usa la API de TMDB sin fines de lucro.
+    Datos obtenidos vía <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a> . Este producto usa la API de TMDB sin fines de lucro.
   </footer>
 </div>
 
