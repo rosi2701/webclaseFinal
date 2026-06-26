@@ -1,25 +1,39 @@
-const DATA = [
-  {id:209867, title:"Frieren: Beyond Journey's End", country:"JP", lang:"Japonés", year:2023, rating:8.80, votes:849, popularity:68.6, poster:"/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", overview:"Una elfa maga reflexiona sobre la vida tras la victoria final."},
-  {id:246, title:"Avatar: The Last Airbender", country:"US", lang:"Inglés", year:2005, rating:8.76, votes:4881, popularity:22.9, poster:"/9RQhVb3r3mCMqYVhLoCu4EvuipP.jpg", overview:"Un joven debe dominar los cuatro elementos para traer paz al mundo."},
-  {id:94605, title:"Arcane", country:"US", lang:"Inglés", year:2021, rating:8.75, votes:5937, popularity:32.1, poster:"/abf8tHznhSvl9BAElD2cQeRr7do.jpg", overview:"Dos hermanas, ciudades rivales y una guerra entre magia y tecnología."},
-  {id:37854, title:"One Piece", country:"JP", lang:"Japonés", year:1999, rating:8.74, votes:5355, popularity:43.7, poster:"/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg", overview:"Un pirata de goma busca el tesoro definitivo: el One Piece."},
-  {id:31911, title:"Fullmetal Alchemist: Brotherhood", country:"JP", lang:"Japonés", year:2009, rating:8.71, votes:2472, popularity:47.0, poster:"/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg", overview:"Dos hermanos alquimistas buscan recuperar lo que la alquimia les quitó."},
-  {id:60625, title:"Rick and Morty", country:"US", lang:"Inglés", year:2013, rating:8.68, votes:10980, popularity:155.8, poster:"/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg", overview:"Un científico errático arrastra a su nieto por el multiverso."},
-  {id:1429, title:"Attack on Titan", country:"JP", lang:"Japonés", year:2013, rating:8.68, votes:7456, popularity:36.2, poster:"/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg", overview:"La humanidad lucha por sobrevivir tras muros que ya no protegen."},
-  {id:92685, title:"The Owl House", country:"US", lang:"Inglés", year:2020, rating:8.70, votes:1801, popularity:22.5, poster:"/rhzwpJBhi2WkfihXndS1xUdQlzB.jpg", overview:"Una adolescente humana se vuelve aprendiz de bruja en un mundo mágico."},
-  {id:46298, title:"Hunter x Hunter", country:"JP", lang:"Japonés", year:2011, rating:8.67, votes:2114, popularity:53.6, poster:"/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg", overview:"Un niño sigue los pasos de su padre para convertirse en Hunter."},
-  {id:42573, title:"Slam Dunk", country:"JP", lang:"Japonés", year:1993, rating:8.67, votes:970, popularity:13.5, poster:"/nmmOKeydeeO4TKucpvyMA2o6gdD.jpg", overview:"Un chico problemático encuentra su lugar en el equipo de baloncesto."},
-  {id:127532, title:"Solo Leveling", country:"JP", lang:"Japonés", year:2024, rating:8.67, votes:1790, popularity:51.0, poster:"/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", overview:"El cazador más débil del mundo se vuelve imparable tras renacer."},
-  {id:89456, title:"Primal", country:"US", lang:"Inglés", year:2019, rating:8.66, votes:1581, popularity:9.1, poster:"/mf12pRakr3eYdJtv6klQtoznnbU.jpg", overview:"Un cavernícola y un dinosaurio se alían para sobrevivir juntos."},
-  {id:42705, title:"Fighting Spirit", country:"JP", lang:"Japonés", year:2000, rating:8.66, votes:1200, popularity:26.5, poster:"/1LApB9C9kEkh2ZU2vzAhurNDipl.jpg", overview:"Un joven tímido descubre su talento oculto para el boxeo."},
-  {id:85937, title:"Demon Slayer: Kimetsu no Yaiba", country:"JP", lang:"Japonés", year:2019, rating:8.64, votes:7275, popularity:17.6, poster:"/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg", overview:"Tanjiro lucha contra demonios para salvar a su hermana convertida en uno."},
-  {id:31132, title:"Regular Show", country:"US", lang:"Inglés", year:2010, rating:8.64, votes:2257, popularity:62.2, poster:"/mS5SLxMYcKfUxA0utBSR5MOAWWr.jpg", overview:"Dos amigos convierten su aburrido trabajo en aventuras absurdas."},
-  {id:95557, title:"Invincible", country:"US", lang:"Inglés", year:2021, rating:8.63, votes:5862, popularity:64.4, poster:"/4tblBrslcKSifMVZ3TmtT2ukMor.jpg", overview:"El hijo del héroe más poderoso descubre sus propios poderes."},
-  {id:62741, title:"Kamisama Kiss", country:"JP", lang:"Japonés", year:2012, rating:8.60, votes:1009, popularity:11.4, poster:"/5E7GL8KxpFemEFl3Lv8Fu4RuSwa.jpg", overview:"Una chica se convierte en diosa territorial de la noche a la mañana."},
-  {id:13916, title:"Death Note", country:"JP", lang:"Japonés", year:2006, rating:8.63, votes:4940, popularity:28.0, poster:"/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg", overview:"Un estudiante usa un cuaderno mortal para intentar limpiar el mundo."},
-  {id:3854, title:"The Spectacular Spider-Man", country:"US", lang:"Inglés", year:2008, rating:8.62, votes:906, popularity:13.3, poster:"/dCNxOhXT7c4lqYuRpdM3m8s9XDp.jpg", overview:"Un adolescente equilibra la escuela con su doble vida de héroe."},
-  {id:60863, title:"Haikyu!!", country:"JP", lang:"Japonés", year:2014, rating:8.62, votes:1507, popularity:35.2, poster:"/8WEr48swcqe89Zsy5sdrGCASlIg.jpg", overview:"Un equipo de vóleibol busca superar a su gran rival escolar."}
-];
+const IMG_BASE      = "https://image.tmdb.org/t/p/w300";
+const BACKDROP_BASE = "https://image.tmdb.org/t/p/w1280";
 
-const IMG_BASE = "https://image.tmdb.org/t/p/w300";
-const COUNTRY_NAMES = {JP:"Japón", US:"EE. UU."};
+const COUNTRY_NAMES = {JP:"Japón", US:"EE. UU.", KR:"Corea", GB:"Reino Unido"};
+const LANG_NAMES    = {ja:"Japonés", en:"Inglés", ko:"Coreano"};
+
+function adaptSerie(raw){
+  const country = (raw.origin_country && raw.origin_country[0]) || "-";
+  const year    = raw.first_air_date ? raw.first_air_date.slice(0,4) : "-";
+
+  return {
+    id          : raw.id,
+    title       : raw.name || raw.original_name || "Sin título",
+    country     : country,
+    lang        : LANG_NAMES[raw.original_language] || raw.original_language || "-",
+    year        : parseInt(year) || 0,
+    rating      : parseFloat(raw.vote_average) || 0,
+    votes       : parseInt(raw.vote_count) || 0,
+    popularity  : parseFloat(raw.popularity) || 0,
+    poster      : raw.poster_path    || "",
+    backdrop    : raw.backdrop_path  || "",
+    overview    : raw.overview       || "Sin descripción disponible.",
+  };
+}
+
+let DATA = [];
+
+function loadData(){
+  return fetch("animated_series.json")
+    .then(r => {
+      if(!r.ok) throw new Error("No se pudo cargar animated_series.json");
+      return r.json();
+    })
+    .then(json => {
+      const raw = Array.isArray(json) ? json : (json.results || []);
+      DATA = raw.map(adaptSerie);
+      return DATA;
+    });
+}
