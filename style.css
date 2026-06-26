@@ -130,8 +130,6 @@ body {
 
 .hero-cta:hover { transform: translateY(-2px); }
 
-.hero-cta svg { transform: rotate(90deg); }
-
 .hero-now-card {
   position: absolute;
   right: 32px;
