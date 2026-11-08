@@ -40,7 +40,7 @@ TMDB API (The Movie Database)
 
 ### Tercero, qué: 
 
-AnimaStats es un dashboard interactivo que permite explorar y comparar las series animadas mejor evaluadas del mundo. Incluye:
+AniToons! es un dashboard interactivo que permite explorar y comparar las series animadas mejor evaluadas del mundo. Incluye:
  
 - Ranking top 10 de series por rating
 - Distribución por país de origen (Japón vs. occidente vs. otros)
