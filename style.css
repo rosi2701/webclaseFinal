@@ -203,8 +203,6 @@ body {
 @media (max-width: 520px) { .kpis { grid-template-columns: 1fr; } }
 
 
-.charts { display: grid; grid-template-columns: 1fr 1.4fr; gap: 18px; margin-bottom: 26px; }
-
 .chart-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -216,6 +214,18 @@ body {
 .chart-card h3 { margin: 0 0 2px; font-size: 15.5px; }
 .chart-card .chart-caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 14px; }
 
+.chart-wide { margin-bottom: 18px; }
+.area-wrap { height: 460px; }
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.bar-wrap { height: 250px; }
+
 .donut-wrap { position: relative; height: 200px; display: flex; align-items: center; justify-content: center; }
 .donut-center { position: absolute; text-align: center; }
 .donut-center .big { font-family: 'Carter One', cursive; font-size: 26px; color: var(--ink); }
@@ -224,8 +234,6 @@ body {
 .legend-row { display: flex; gap: 14px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--ink-soft); font-weight: 500; }
 .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
-
-.area-wrap { height: 236px; }
 
 
 .chart-empty {
@@ -242,7 +250,10 @@ body {
 .chart-empty p { margin: 0; font-size: 13px; font-weight: 500; }
 .chart-empty span { font-size: 11.5px; opacity: .7; }
 
-@media (max-width: 900px) { .charts { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .charts-row { grid-template-columns: 1fr; }
+  .area-wrap { height: 340px; }
+}
 
 
 .toolbar {
