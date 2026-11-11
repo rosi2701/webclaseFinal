@@ -152,7 +152,7 @@ function renderArea(){
           fill:true, tension:0.4, pointRadius:0, borderWidth:2.5 },
         { label:'Popularidad (escala)', data:popScaled,
           borderColor:'#7C5CC9', backgroundColor:'rgba(124,92,201,0.18)',
-          fill:true, tension:0.4, pointRadius:0, borderWidth:2.5 }
+          fill:true, tension:0.4, pointRadius:0, borderWidth:1.5 }
       ]
     },
     options:{
@@ -164,8 +164,46 @@ function renderArea(){
       },
       scales:{
         x:{ title:{display:true,text:'Posición en el ranking',font:{size:10.5}},
-            grid:{display:false}, ticks:{font:{size:10}} },
+            grid:{display:false},
+            ticks:{ font:{size:10}, maxRotation:0, autoSkip:true, maxTicksLimit:20 } },
         y:{ display:false, min:0, max:110 }
+      }
+    }
+  });
+}
+
+let decadeInstance = null;
+function renderDecades(){
+  const canvas = document.getElementById('decadeChart');
+  const counts = {};
+  DATA.forEach(d=>{
+    if(!d.year) return;
+    const dec = Math.floor(d.year/10)*10;
+    counts[dec] = (counts[dec]||0) + 1;
+  });
+  const decades = Object.keys(counts).map(Number).sort((a,b)=>a-b);
+
+  if(decadeInstance) decadeInstance.destroy();
+  decadeInstance = new Chart(canvas, {
+    type:'bar',
+    data:{
+      labels: decades.map(d=>d+'s'),
+      datasets:[{
+        data: decades.map(d=>counts[d]),
+        backgroundColor:'#DD4F9B',
+        borderRadius:8,
+        maxBarThickness:42
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{ callbacks:{ label:(c)=>` ${c.raw} series` }}
+      },
+      scales:{
+        x:{ grid:{display:false}, ticks:{font:{size:11}} },
+        y:{ beginAtZero:true, ticks:{font:{size:10}}, grid:{color:'#ECE9F5'} }
       }
     }
   });
@@ -405,6 +443,7 @@ loadData()
     renderKPIs();
     renderDonut();
     renderArea();
+    renderDecades();
     renderHero();
     applyFilters();
   })
