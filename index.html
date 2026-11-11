@@ -53,7 +53,15 @@
 
   <section class="kpis" id="kpis"></section>
 
-  <section class="charts">
+  <section class="chart-card chart-wide">
+    <h3>Calificación vs. popularidad</h3>
+    <p class="chart-caption">Top series - la popularidad no siempre acompaña a la calificación</p>
+    <div class="area-wrap">
+      <canvas id="areaChart"></canvas>
+    </div>
+  </section>
+
+  <section class="charts-row">
     <div class="chart-card">
       <h3>Distribución por calificación</h3>
       <p class="chart-caption">Series agrupadas por nivel de puntuación</p>
@@ -66,14 +74,16 @@
       </div>
       <div class="legend-row" id="donutLegend"></div>
     </div>
+
     <div class="chart-card">
-      <h3>Calificación vs. popularidad</h3>
-      <p class="chart-caption">Top series - la popularidad no siempre acompaña a la calificación</p>
-      <div class="area-wrap">
-        <canvas id="areaChart"></canvas>
+      <h3>Series por década</h3>
+      <p class="chart-caption">Cantidad de series según su año de estreno</p>
+      <div class="bar-wrap">
+        <canvas id="decadeChart"></canvas>
       </div>
     </div>
   </section>
+
   <section class="toolbar">
     <div class="toolbar-left">
       <h3>Catálogo de series</h3>
@@ -128,4 +138,3 @@
 <script src="app.js"></script>
 </body>
 </html>
-
